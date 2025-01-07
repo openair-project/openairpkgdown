@@ -1,0 +1,34 @@
+template:
+  bootstrap: 5
+  light-switch: true
+  theme: a11y-light
+  theme-dark: a11y-dark
+  bslib:
+    bg: "#FFFFFF"
+    fg: "#0d0d0d"
+    primary: "#4169e1"
+    base_font: {google: "Nunito Sans"}
+    heading_font: {google: "Nunito Sans"}
+    code_font: {google: "JetBrains Mono"}
+    pkgdown-nav-height: 100px
+
+navbar:
+  bg: "#f8f4f4"
+  structure:
+    left:  [intro, reference, news, articles, casestudy]
+    right: [search, home, book, github, lightswitch]
+  components:
+    reference:
+      text: Functions
+      href: reference/index.html
+    news:
+      text: News
+      href: news/index.html
+    home:
+      icon: fa-globe
+      href: https://github.com/openair-project
+      aria-label: Website
+    book:
+      icon: fa-book
+      href: https://openair-project.github.io/book/
+      aria-label: Website
