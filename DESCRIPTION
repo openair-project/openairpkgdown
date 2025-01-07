@@ -1,6 +1,6 @@
 Package: openairpkgdown
 Title: Personal pkgdown theme
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person(given = "Jack",
            family = "Davison",

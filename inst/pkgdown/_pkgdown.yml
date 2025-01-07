@@ -16,7 +16,7 @@ navbar:
   bg: "#f8f4f4"
   structure:
     left:  [intro, reference, news, articles, casestudy]
-    right: [search, home, book, github, lightswitch]
+    right: [search, home, book, github, lightswitch, packages]
   components:
     reference:
       text: Functions
@@ -31,4 +31,15 @@ navbar:
     book:
       icon: fa-book
       href: https://openair-project.github.io/book/
-      aria-label: Website
+      aria-label: Book
+    packages:
+      text: Packages
+      menu:
+      - text: 🧭 openair
+        href: https://openair-project.github.io/openair/
+      - text: 🗺️ openairmaps
+        href: https://openair-project.github.io/openairmaps/
+      - text: 🍃 worldmet
+        href: https://openair-project.github.io/worldmet/
+      - text: 📉 deweather
+        href: https://openair-project.github.io/deweather/
