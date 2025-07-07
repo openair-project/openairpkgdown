@@ -35,11 +35,13 @@ navbar:
     packages:
       text: Packages
       menu:
+      - text: Data Analysis
       - text: 🧭 openair
         href: https://openair-project.github.io/openair/
       - text: 🗺️ openairmaps
         href: https://openair-project.github.io/openairmaps/
-      - text: 🍃 worldmet
-        href: https://openair-project.github.io/worldmet/
       - text: 📉 deweather
         href: https://openair-project.github.io/deweather/
+      - text: Data Access
+      - text: 🍃 worldmet
+        href: https://openair-project.github.io/worldmet/
