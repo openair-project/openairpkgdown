@@ -1,3 +1,7 @@
+# openairpkgdown 0.0.4
+
+- Added `{euroaq}` link.
+
 # openairpkgdown 0.0.3
 
 - Categorised packages.

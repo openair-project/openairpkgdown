@@ -45,3 +45,5 @@ navbar:
       - text: Data Access
       - text: 🍃 worldmet
         href: https://openair-project.github.io/worldmet/
+      - text: 🌍 euroaq
+        href: https://openair-project.github.io/euroaq/
