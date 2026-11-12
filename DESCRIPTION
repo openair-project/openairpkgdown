@@ -1,11 +1,14 @@
 Package: openairpkgdown
-Title: Personal pkgdown theme
-Version: 0.0.5
+Title: pkgdown Theme for the openair Project
+Version: 0.0.6
 Authors@R: 
     person("Jack", "Davison", , "davison.jack.jd@gmail.com", role = c("aut", "cre"))
 Description: Openair pkgdown theme.
 License: MIT + file LICENSE
-URL: https://openair-project.github.io/openairpkgdown/
+URL: https://openair-project.github.io/openairpkgdown/,
+    https://github.com/openair-project/openairpkgdown
+BugReports: https://github.com/openair-project/openairpkgdown/issues
+Config/Needs/website: rmarkdown
 Suggests: 
     covr
 Encoding: UTF-8

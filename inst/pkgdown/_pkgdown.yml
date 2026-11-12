@@ -4,19 +4,16 @@ template:
   theme: a11y-light
   theme-dark: a11y-dark
   bslib:
-    bg: "#FFFFFF"
-    fg: "#0d0d0d"
     primary: "#4169e1"
     base_font: {google: "Nunito Sans"}
     heading_font: {google: "Nunito Sans"}
     code_font: {google: "JetBrains Mono"}
-    pkgdown-nav-height: 100px
+    pkgdown-nav-height: 72px
 
 navbar:
-  bg: "#f8f4f4"
   structure:
-    left:  [intro, reference, news, articles, casestudy]
-    right: [search, home, book, github, lightswitch, packages]
+    left:  [intro, reference, articles, casestudy, news]
+    right: [packages, search, book, github, lightswitch]
   components:
     reference:
       text: Functions
@@ -24,28 +21,36 @@ navbar:
     news:
       text: News
       href: news/index.html
-    home:
-      icon: fa-globe
-      href: https://github.com/openair-project
-      aria-label: Website
     book:
       icon: fa-book
       href: https://openair-project.github.io/book/
-      aria-label: Book
+      aria-label: The openair book
     packages:
-      text: Packages
+      text: Toolkit
       menu:
       - text: Data Analysis
-      - text: 🧭 openair
+      - text: openair
         href: https://openair-project.github.io/openair/
-      - text: 🗺️ openairmaps
+      - text: openairmaps
         href: https://openair-project.github.io/openairmaps/
-      - text: 📉 deweather
+      - text: deweather
         href: https://openair-project.github.io/deweather/
       - text: Data Access
-      - text: 🍃 worldmet
+      - text: worldmet
         href: https://openair-project.github.io/worldmet/
-      - text: 🌍 euroaq
+      - text: euroaq
         href: https://openair-project.github.io/euroaq/
-      - text: 👑 ukaq
+      - text: ukaq
         href: https://openair-project.github.io/ukaq/
+      - text: Resources
+      - text: The openair book
+        href: https://openair-project.github.io/book/
+      - text: openair on GitHub
+        href: https://github.com/openair-project
+
+footer:
+  structure:
+    left: developed_by
+    right: [openair, built_with]
+  components:
+    openair: "Part of the [openair project](https://github.com/openair-project)."

@@ -2,3 +2,7 @@ url: https://openair-project.github.io/openairpkgdown/
 template:
   package: openairpkgdown
 
+articles:
+- title: Theme
+  contents:
+  - articles/theme-demo

@@ -1,0 +1,279 @@
+// openair pkgdown theme
+//
+// Small, deliberate tweaks layered on top of pkgdown's BS5 defaults. Colours
+// are driven by Bootstrap CSS variables so both light and dark mode (via the
+// light-switch) work without separate rules where possible.
+
+$oa-radius: 0.5rem;
+$oa-accent: var(--bs-link-color-rgb);
+
+/* navbar =================================================================== */
+
+// A clean bar that matches the page, separated by a hairline, with a thin
+// brand-coloured strip along the top.
+.navbar {
+  background: RGBA(var(--bs-body-bg-rgb), 0.85);
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  border-top: 3px solid RGB($oa-accent);
+  border-bottom: 1px solid var(--bs-border-color-translucent);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.navbar .nav-text {
+  font-family: $font-family-monospace;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: RGBA(var(--bs-body-color-rgb), 0.06);
+}
+
+// Active / hover nav items: tinted text instead of a grey pill
+.navbar .nav-item .nav-link {
+  font-weight: 600;
+}
+
+.navbar .nav-item.active .nav-link {
+  color: RGB($oa-accent);
+  background: RGBA($oa-accent, 0.1);
+}
+
+.navbar .nav-item .nav-link:hover {
+  color: RGB($oa-accent);
+  background: RGBA($oa-accent, 0.08);
+}
+
+.navbar input[type="search"] {
+  border-radius: 999px;
+  background: RGBA(var(--bs-body-color-rgb), 0.04);
+}
+
+.dropdown-menu {
+  border-radius: $oa-radius;
+  border-color: var(--bs-border-color-translucent);
+  box-shadow: 0 8px 24px RGBA(0, 0, 0, 0.08);
+  padding: 0.25rem 0;
+  // pkgdown caps menus at 280px, which makes the Toolkit menu scroll
+  max-height: 32rem;
+}
+
+// Section labels in the "Toolkit" menu: bold, accent-coloured small caps,
+// with a hairline between sections
+.dropdown-header {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: RGB($oa-accent);
+  padding-top: 0.6rem;
+  padding-bottom: 0.2rem;
+}
+
+li:not(:first-child) > .dropdown-header {
+  margin-top: 0.35rem;
+  border-top: 1px solid var(--bs-border-color-translucent);
+  padding-top: 0.75rem;
+}
+
+// Items sit slightly indented under their section label
+.dropdown-menu:has(.dropdown-header) .dropdown-item {
+  padding-left: 1.5rem;
+}
+
+// The current package in the "Toolkit" menu (set by after-body.html): a
+// tinted row with an accent bar, rather than Bootstrap's solid fill
+.dropdown-menu .dropdown-item.oa-current {
+  color: RGB($oa-accent);
+  background: RGBA($oa-accent, 0.1);
+  box-shadow: inset 3px 0 0 RGB($oa-accent);
+  font-weight: 700;
+}
+
+/* typography =============================================================== */
+
+body {
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+h1, .h1 {
+  font-weight: 800;
+}
+
+h2, .h2 {
+  margin-top: 2.25rem;
+}
+
+.page-header {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+}
+
+// Subtle accent under the page title
+.page-header h1::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  margin-top: 0.75rem;
+  border-radius: 2px;
+  background: RGB($oa-accent);
+}
+
+// Lead paragraph / package description
+.page-header + p,
+.ref-description {
+  font-size: 1.1em;
+  color: RGBA(var(--bs-body-color-rgb), 0.8);
+}
+
+main a:not(.anchor):not(.btn) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: RGBA($oa-accent, 0.35);
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 150ms ease;
+
+  &:hover {
+    text-decoration-color: RGB($oa-accent);
+  }
+}
+
+hr {
+  opacity: 0.12;
+}
+
+blockquote {
+  padding: 0.5rem 1rem;
+  border-left: 4px solid RGBA($oa-accent, 0.5);
+  background: RGBA($oa-accent, 0.05);
+  border-radius: 0 $oa-radius $oa-radius 0;
+}
+
+/* code ===================================================================== */
+
+pre {
+  border: 1px solid var(--bs-border-color-translucent);
+  border-radius: $oa-radius;
+  background-color: RGBA(var(--bs-body-color-rgb), 0.03);
+  padding: 1rem;
+}
+
+// Code output / inline code: soft tinted chip
+:not(pre) > code {
+  padding: 0.1em 0.35em;
+  border-radius: 0.3em;
+  background-color: RGBA(var(--bs-body-color-rgb), 0.06);
+  font-size: 0.875em;
+}
+
+// linked function names (e.g. reference index); excludes highlighted code
+main :not(pre) > code a:any-link,
+main a:any-link > code {
+  color: RGB($oa-accent);
+}
+
+.btn-copy-ex {
+  border-radius: 0.35rem;
+}
+
+/* sidebar / table of contents ============================================== */
+
+aside h2 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: RGBA(var(--bs-body-color-rgb), 0.6);
+}
+
+#toc > .nav {
+  border-left: 2px solid var(--bs-border-color-translucent);
+
+  a.nav-link {
+    margin-left: -2px;
+    border-left: 2px solid transparent;
+    border-radius: 0;
+    font-size: 0.925em;
+    color: RGBA(var(--bs-body-color-rgb), 0.75);
+
+    &:hover,
+    &:focus {
+      background: none;
+      color: RGB($oa-accent);
+    }
+
+    &.active {
+      background: none;
+      color: RGB($oa-accent);
+      border-left-color: RGB($oa-accent);
+      font-weight: 600;
+    }
+  }
+}
+
+/* reference index ========================================================== */
+
+// Hairline separators between function entries / arguments
+main .section > dl > dt {
+  margin-top: 0.75rem;
+}
+
+main .section > dl > dt + dd + dt {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--bs-border-color-translucent);
+}
+
+/* tables =================================================================== */
+
+main table:not(.gt_table) {
+  border-collapse: collapse;
+
+  th {
+    font-weight: 700;
+    border-bottom: 2px solid var(--bs-border-color);
+  }
+
+  td, th {
+    padding: 0.4rem 0.75rem;
+  }
+
+  tr + tr td {
+    border-top: 1px solid var(--bs-border-color-translucent);
+  }
+}
+
+/* callouts (GitHub-style alerts / Quarto) ================================== */
+
+.alert, .callout {
+  border-radius: $oa-radius;
+  border-width: 0 0 0 4px;
+}
+
+/* footer =================================================================== */
+
+footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--bs-border-color-translucent);
+  color: RGBA(var(--bs-body-color-rgb), 0.6);
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: RGBA(var(--bs-body-color-rgb), 0.3);
+    text-underline-offset: 0.2em;
+  }
+}
